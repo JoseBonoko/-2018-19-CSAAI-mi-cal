@@ -1,24 +1,26 @@
 function main(){
-  //-- Variables
-var uno = document.getElementById('uno')
-var dos = document.getElementById('dos')
-var tres = document.getElementById('tres')
-var cuatro = document.getElementById('cuatro')
-var cinco = document.getElementById('cinco')
-var seis = document.getElementById('seis')
-var siete = document.getElementById('siete')
-var ocho = document.getElementById('ocho')
-var nueve = document.getElementById('nueve')
-var cero = document.getElementById('cero')
-var sumar = document.getElementById('sumar')
-var restar = document.getElementById('restar')
-var multiplicar = document.getElementById('multiplicar')
-var dividir = document.getElementById('dividir')
-var valor1 = 0;
-var valor2 = 0;
-var resultado = 0;
+    // Variables
+  var uno = document.getElementById('uno')
+  var dos = document.getElementById('dos')
+  var tres = document.getElementById('tres')
+  var cuatro = document.getElementById('cuatro')
+  var cinco = document.getElementById('cinco')
+  var seis = document.getElementById('seis')
+  var siete = document.getElementById('siete')
+  var ocho = document.getElementById('ocho')
+  var nueve = document.getElementById('nueve')
+  var cero = document.getElementById('cero')
+  var reset = document.getElementById('reset')
+  var sumar = document.getElementById('sumar')
+  var restar = document.getElementById('restar')
+  var multiplicar = document.getElementById('multiplicar')
+  var dividir = document.getElementById('dividir')
+  var igual = document.getElementById('igual')
+  var valor1;
+  var valor2;
+  var operacion;
 
-  //--Acciones
+  // Acciones
   uno.onclick = () => {
     display = document.getElementById('display')
     display.innerHTML +="1"
@@ -59,40 +61,66 @@ var resultado = 0;
     display = document.getElementById('display')
     display.innerHTML += "0"
   }
+  reset.onclick = () => {
+    display = document.getElementById('display')
+    resetear()
+  }
   sumar.onclick = () => {
     display = document.getElementById('display')
-    display.innerHTML += "+"
+    valor1 = display.innerHTML;
+    operacion = "+";
+    display.innerHTML = "";
   }
   restar.onclick = () => {
     display = document.getElementById('display')
-    display.innerHTML += "-"
+    valor1 = display.innerHTML;
+    operacion = "-";
+    display.innerHTML = "";
   }
   multiplicar.onclick = () => {
     display = document.getElementById('display')
-    display.innerHTML += "*"
+    valor1 = display.innerHTML;
+    operacion = "*";
+    display.innerHTML = "";
   }
   dividir.onclick = () => {
     display = document.getElementById('display')
-    display.innerHTML += "/"
+    valor1 = display.innerHTML;
+    operacion = "/";
+    display.innerHTML = "";
   }
-  //-- Operaciones
+  igual.onclick = () => {
+  display = document.getElementById('display')
+  valor2 = display.innerHTML;
+  resultado();
+  }
 
-  function suma(){
-    valor1 = display.innerHTML
+  // Funciones
+  function resetear(){
+    display = document.getElementById('display')
+    display.innerHTML = "";
+    valor1 = 0;
+    valor2 = 0;
+    operacion = "";
   }
-  
-  var gui = {
-    display: document.getElementById('display'),
-    sumar: document.getElementById('sumar'),
-    restar: document.getElementById('restar'),
-    multiplicar: document.getElementById('multilicar'),
-    dividir: document.getElementById('dividir')
-  }
-  var counter = {
-    valor: 0,
-    inc: function(value) {
-      this.valor += value;
-      gui.display.innerHTML = this.valor;
+
+  function resultado(){
+    var resul = 0;
+    switch(operacion){
+      case "+":
+        resul = parseFloat(valor1) + parseFloat(valor2);
+        break;
+      case "-":
+        resul = parseFloat(valor1) - parseFloat(valor2);
+        break;
+      case "*":
+        resul = parseFloat(valor1) * parseFloat(valor2);
+        break;
+      case "/":
+        resul = parseFloat(valor1) / parseFloat(valor2);
+        break;
     }
-  };
+    resetear();
+    display.innerHTML = resul;
+  }
 }

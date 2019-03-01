@@ -3,30 +3,39 @@
   <head>
     <meta charset="utf-8">
     <link rel = "stylesheet" type = "text/css" href = "style.css">
-    <title> Javascript </title>
+    <title> Calculadora </title>
     <script src="pruebajava.js"> </script>
 
   </head>
   <body onload="main();">
-  <p id="display"></p>
-  <button id="siete">7</button>
-  <button id="ocho">8</button>
-  <button id="nueve">9</button>
-  <button id="dividir">/</button>
-  <br>
-  <button id="cuatro">4</button>
-  <button id="cinco">5</pbutton>
-  <button id="seis">6</button>
-  <button id="multiplicar">*</button>
-  <br>
-  <button id="uno">1</button>
-  <button id="dos">2</button>
-  <button id="tres">3</button>
-  <button id="restar">-</button>
-  <br>
-  <button id="coma">,</button>
-  <button id="cero">0</button>
-  <button id="igual">=</button>
-  <button id="sumar">+</button>
+    <table class="calculadora">
+      <tr>
+        <td colspan="4"><span id="display"></span></td>
+      </tr>
+      <tr>
+        <td><button id="siete">7</button></td>
+        <td><button id="ocho">8</button></td>
+        <td><button id="nueve">9</button></td>
+        <td><button id="dividir">/</button></td>
+      </tr>
+      <tr>
+        <td><button id="cuatro">4</button></td>
+        <td><button id="cinco">5</button></td>
+        <td><button id="seis">6</button></td>
+        <td><button id="multiplicar">*</button></td>
+      </tr>
+      <tr>
+        <td><button id="uno">1</button></td>
+        <td><button id="dos">2</button></td>
+        <td><button id="tres">3</button></td>
+        <td><button id="restar">-</button></td>
+      </tr>
+      <tr>
+        <td><button id="reset">C</button></td>
+        <td><button id="cero">0</button></td>
+        <td><button id="igual">=</button></td>
+        <td><button id="sumar">+</button></td>
+      </tr>
+    </table>
   </body>
 </html>
